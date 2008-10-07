@@ -1,0 +1,15 @@
+h1. Sinatra Starter Kit
+
+A starting point for your new Sinatra app.
+
+h2. Configuration
+
+To edit the database config, look at _config.rb_.
+
+For models/multiple controller files and other stuff, take a look at _application.rb_
+
+h3. Living on the edge
+
+There's a Rake task for grabbing the latest Sinatra source from GitHub and use that.
+
+* rake sinatra:edge
