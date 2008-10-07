@@ -4,7 +4,7 @@ require "dm-core"
 # Load from vendor dir if it exists
 # Use "rake sinatra:edge" to pull down the newest Sinatra from GitHub
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
-require "sinatra"
+require "sinatra" unless defined?(Sinatra)
 
 configure do
   # Loads default DataMapper SQLite3 setup
