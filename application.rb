@@ -20,4 +20,4 @@ end
 # Dir["controllers/*.rb"].each { |c| load c }
 
 # Single controllers file
-load File.join(here, "app", "controllers.rb")
+load File.join(File.dirname(__FILE__), "app", "controllers.rb")
