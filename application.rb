@@ -14,10 +14,10 @@ configure do
 end
 
 # Models
-# Dir["models/*.rb"].each { |c| require c }
+# Dir["app/models/*.rb"].each { |c| require c }
 
 # Multiple controller files
-# Dir["controllers/*.rb"].each { |c| load c }
+# Dir["app/controllers/*.rb"].each { |c| load c }
 
 # Single controllers file
 load File.join(File.dirname(__FILE__), "app", "controllers.rb")

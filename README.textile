@@ -4,12 +4,12 @@ A starting point for your new Sinatra app. It loads you up with a Rails-ish dire
 
 h2. Configuration
 
-Database config is in _config.rb_. Tests use the sqlite3-memory adapter, so no setup needed.
+Database config is in @config.rb@. Tests use the sqlite3-memory adapter, so no setup needed.
 
-For models/multiple controller files and other stuff, take a look at _application.rb_
+For models/multiple controller files and other stuff, take a look at @application.rb@
 
 h2. Living on the edge
 
 There's a Rake task for grabbing the latest Sinatra source from GitHub.
 
-* rake sinatra:edge
+* @rake sinatra:edge@

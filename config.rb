@@ -1,2 +1,2 @@
 require "dm-core"
-DataMapper.setup(:default, "sqlite3:db/db.sqlite3")
+DataMapper.setup(:default, "sqlite3:development.sqlite3")
