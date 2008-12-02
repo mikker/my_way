@@ -3,7 +3,7 @@ require "spec/rake/spectask"
 
 require "config"
 
-file_list = Dir["specs/*_spec.rb"]
+file_list = Dir["spec/*_spec.rb"]
 Spec::Rake::SpecTask.new('spec') do |t|
   t.spec_files = file_list
 end
