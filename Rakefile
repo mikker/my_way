@@ -12,9 +12,13 @@ desc 'Default: run specs'
 task :default => 'spec'
 
 namespace :db do
-  desc "AutoMigrate the db"
+  desc "AutoMigrate the db (deletes data)"
   task :migrate do
     DataMapper.auto_migrate!
+  end
+  desc "AutoUpgrade the db (preserves data)"
+  task :upgrade do
+    DataMapper.auto_upgrade!
   end
 end
 
