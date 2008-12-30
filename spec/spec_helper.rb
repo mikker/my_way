@@ -1,7 +1,7 @@
 require "rubygems"
-require "dm-core"
+require "spec"
 
-# !!! Include libs here
+require "config"
 
 DataMapper.setup(:default, "sqlite3::memory:")
 DataMapper.auto_migrate!
