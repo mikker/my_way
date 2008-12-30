@@ -26,9 +26,9 @@ namespace :sinatra do
   desc "Updates or downloads the latest Sinatra build"
   task :edge do
     if !File.exists?(File.join(File.dirname(__FILE__), "vendor", "sinatra"))
-      system "git clone git://github.com/bmizerany/sinatra.git vendor/sinatra"
+      system "git submodule add git://github.com/bmizerany/sinatra.git vendor/sinatra"
     else
-      system "cd vendor/sinatra;git pull"
+      system "git submodule update"
     end
   end
 end
