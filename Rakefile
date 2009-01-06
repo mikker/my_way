@@ -11,13 +11,20 @@ end
 desc 'Default: run specs'
 task :default => 'spec'
 
+task :environment do
+  $LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
+  require "sinatra"
+  Sinatra::Application.default_options.merge!(:run => false)
+  require "application"
+end
+
 namespace :db do
   desc "AutoMigrate the db (deletes data)"
-  task :migrate do
+  task :migrate => :environment do
     DataMapper.auto_migrate!
   end
   desc "AutoUpgrade the db (preserves data)"
-  task :upgrade do
+  task :upgrade => :environment do
     DataMapper.auto_upgrade!
   end
 end
