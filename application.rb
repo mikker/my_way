@@ -9,12 +9,12 @@ configure do
   # Loads default DataMapper SQLite3 setup
   require "config"
   
+  # Models
+  # Dir["app/models/*.rb"].each { |c| require c }
+
   # Sets the view path
   set_option :views, File.join(File.dirname(__FILE__), 'app', 'views')
 end
-
-# Models
-# Dir["app/models/*.rb"].each { |c| require c }
 
 # Multiple controller files
 # Dir["app/controllers/*.rb"].each { |c| load c }
