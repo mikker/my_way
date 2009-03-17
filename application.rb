@@ -1,9 +1,11 @@
-require "rubygems"
+require "sinatra"
 
-# Load from vendor dir if it exists
-# Use "rake sinatra:edge" to pull down the newest Sinatra from GitHub
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
-require "sinatra" unless defined?(Sinatra)
+# Load libs from vendor dir
+# This makes it possible to vendor your gems
+# eg. for use on Heroku hosting (or anything else)
+Dir['vendor/*'].each do |lib|
+  $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
+end
 
 configure do
   # Loads default DataMapper SQLite3 setup
