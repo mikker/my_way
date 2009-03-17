@@ -3,6 +3,7 @@ require "sinatra"
 # Load libs from vendor dir
 # This makes it possible to vendor your gems
 # eg. for use on Heroku hosting (or anything else)
+# [ For Heroku; see http://gist.github.com/68277 ]
 Dir['vendor/*'].each do |lib|
   $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
 end
@@ -23,7 +24,7 @@ end
 
 # Inline controller
 get '/' do
-  "Sinatra did it his way..."
+  haml :index, :layout => !request.xhr?
 end
 
 get '/stylesheet.css' do
