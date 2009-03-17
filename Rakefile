@@ -12,9 +12,6 @@ desc 'Default: run specs'
 task :default => 'spec'
 
 task :environment do
-  $LOAD_PATH.unshift(File.dirname(__FILE__) + '/vendor/sinatra/lib')
-  require "sinatra"
-  Sinatra::Application.default_options.merge!(:run => false)
   require "application"
 end
 

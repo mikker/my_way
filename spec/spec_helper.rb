@@ -1,7 +1,7 @@
 require "rubygems"
+require "application"
 require "spec"
+require 'spec/interop/test'
+require 'sinatra/test'
 
-require "config"
-
-DataMapper.setup(:default, "sqlite3::memory:")
-DataMapper.auto_migrate!
+set :environment, :test

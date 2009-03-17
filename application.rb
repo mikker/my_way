@@ -9,11 +9,20 @@ Dir['vendor/*'].each do |lib|
 end
 
 configure do
-  # Loads default DataMapper SQLite3 setup
-  require "config"
+  # Require DM here to only load it at boot up
+  # require "dm-core" # remember to bundle what you need
+  # DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/data.sqlite3")  
+  # To always make your tables up to the beat, you could do something like;
+  # DataMapper.auto_upgrade! # Then a reload is enough
   
   # Models
   # Dir["models/*.rb"].each { |c| require c }
+end
+
+configure :test do
+  # Uncomment this to make DM use it's memory adapter for tests
+  # DataMapper.setup(:default, "sqlite3::memory:")
+  # DataMapper.auto_migrate!
 end
 
 # Multiple controller files
