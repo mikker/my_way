@@ -1,0 +1,13 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => "en", :lang => "en"}
+  %head
+    / Meta
+    %meta{"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}
+    / Styles
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheet.css"}
+    / Title
+    %title Sinatra does his thing
+  %body
+    .content
+      = yield
+    

@@ -12,14 +12,21 @@ configure do
   require "config"
   
   # Models
-  # Dir["app/models/*.rb"].each { |c| require c }
-
-  # Sets the view path
-  set :views, File.join(File.dirname(__FILE__), 'app', 'views')
+  # Dir["models/*.rb"].each { |c| require c }
 end
 
 # Multiple controller files
 # Dir["app/controllers/*.rb"].each { |c| load c }
 
 # Single controllers file
-load File.join(File.dirname(__FILE__), "app", "controller.rb")
+# load File.join(File.dirname(__FILE__), "app", "controller.rb")
+
+# Inline controller
+get '/' do
+  "Sinatra did it his way..."
+end
+
+get '/stylesheet.css' do
+  content_type 'text/css'
+  sass :application
+end
