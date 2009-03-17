@@ -1,15 +1,7 @@
 h1. Sinatra Starter Kit
 
-A starting point for your new Sinatra app. It loads you up with a Rails-ish directory structure with either a single or multiple controller files, models, views. It makes it easy to stay on top with the newest Sinatra-source. And it's ready to roll with RSpec and DataMapper.
+A starting point for your new Sinatra app.
 
 h2. Configuration
 
-Database config is in @config.rb@. Tests use the sqlite3-memory adapter, so no setup needed.
-
-For models/multiple controller files and other stuff, take a look at @application.rb@
-
-h2. Living on the edge
-
-There's a Rake task for grabbing the latest Sinatra source from GitHub.
-
-* @rake sinatra:edge@
+Take a look at @application.rb@... Everything should be kinda self explanatory.
