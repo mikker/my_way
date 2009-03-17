@@ -13,7 +13,7 @@ configure do
   # Dir["app/models/*.rb"].each { |c| require c }
 
   # Sets the view path
-  set_option :views, File.join(File.dirname(__FILE__), 'app', 'views')
+  set :views, File.join(File.dirname(__FILE__), 'app', 'views')
 end
 
 # Multiple controller files
