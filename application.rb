@@ -24,7 +24,7 @@ end
 
 # Inline controller
 get '/' do
-  haml :index, :layout => !request.xhr?
+  haml :index, :layout => !request.xhr? # don't load layout if, the request is js
 end
 
 get '/stylesheet.css' do
