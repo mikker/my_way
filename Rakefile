@@ -1,38 +1,22 @@
-require "rubygems"
-require "spec/rake/spectask"
-
-require "config"
-
-file_list = Dir["spec/*_spec.rb"]
-Spec::Rake::SpecTask.new('spec') do |t|
-  t.spec_files = file_list
-end
-
-desc 'Default: run specs'
-task :default => 'spec'
-
-task :environment do
-  require "application"
-end
-
-namespace :db do
-  desc "AutoMigrate the db (deletes data)"
-  task :migrate => :environment do
-    DataMapper.auto_migrate!
+namespace :compass do
+  desc "Run Webby"
+  task :run do
+    system 'compass -w --sass-dir=app/stylesheets --css-dir=public/stylesheets'
   end
-  desc "AutoUpgrade the db (preserves data)"
-  task :upgrade => :environment do
-    DataMapper.auto_upgrade!
+end
+namespace :shotgun do
+  desc "Run Shotgun"
+  task :run do
+    system 'shotgun -s thin'
   end
 end
 
-namespace :sinatra do
-  desc "Updates or downloads the latest Sinatra build"
-  task :edge do
-    if !File.exists?(File.join(File.dirname(__FILE__), "vendor", "sinatra"))
-      system "git submodule add git://github.com/bmizerany/sinatra.git vendor/sinatra"
-    else
-      system "git submodule update"
-    end
-  end
+desc "Run everything needed to develop"
+multitask :develop => [ 'compass:run', 'shotgun:run' ]
+
+# Test task
+require 'rake/testtask'
+Rake::TestTask.new do |t|
+  t.test_files = FileList['test/test_*.rb']
 end
+task :default => :test

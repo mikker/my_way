@@ -1,2 +1,8 @@
 .DS_Store
-log/*.log
+.sass-cache
+tmp/*
+
+# Bundler
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
