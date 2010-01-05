@@ -1,7 +1,21 @@
-h1. Sinatra Starter Kit
+h1. my_way
 
 A starting point for your new Sinatra app.
 
-h2. Configuration
+h4. Configuration
 
-Take a look at @application.rb@... Everything should be kinda self explanatory.
+Setup your libs and gems in @Gemfile@ and use @rake develop@ to boot up shotgun (webserver) and compass (stylesheets).
+
+I've included a test helper to help you with the basics of rack/test.
+
+h4. Credits
+
+* Sinatra: http://www.sinatrarb.com/
+* Compass: http://compass-style.org/
+* shotgun: http://rtomayko.github.com/shotgun/
+* bundler: http://github.com/wycats/bundler
+* rack/test: http://github.com/brynary/rack-test
+
+h4. License
+
+Go nuts.
