@@ -7,17 +7,9 @@ configure do
   set :root, File.dirname(__FILE__)
   set :views, 'app/views'
 
-  # Require DM here to only load it at boot up
-  # require "dm-core" # remember to bundle what you need
-  # DataMapper.setup(:default, "sqlite3:///#{Dir.pwd}/data.sqlite3")  
-  # To always make your tables up to the beat, you could do something like;
-  # DataMapper.auto_upgrade! # Then a reload is enough
-  
-  # Models
-  # Dir["models/*.rb"].each { |c| require c }
+  # Set up your db connection or whatever here ...
 end
 
-# Inline controller
 get '/' do
   haml :index, :layout => !request.xhr? # don't load layout if, the request is js
 end
