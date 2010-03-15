@@ -1,18 +1,15 @@
-namespace :compass do
-  desc "Run Webby"
-  task :run do
-    system 'compass -w --sass-dir=app/stylesheets --css-dir=public/stylesheets'
-  end
+desc "Compass watcher"
+task :compass do
+  system 'compass -w --sass-dir=app/stylesheets --css-dir=public/stylesheets --images-dir=public/images'
 end
-namespace :shotgun do
-  desc "Run Shotgun"
-  task :run do
-    system 'shotgun -s thin'
-  end
+
+desc "Run Shotgun"
+task :shotgun do
+  system 'shotgun config.ru'
 end
 
 desc "Run everything needed to develop"
-multitask :develop => [ 'compass:run', 'shotgun:run' ]
+multitask :develop => [ 'compass', 'shotgun' ]
 
 # Test task
 require 'rake/testtask'
