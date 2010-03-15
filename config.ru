@@ -1,2 +1,2 @@
-require "application"
-run Sinatra::Application
+require "init"
+run MyWay.app

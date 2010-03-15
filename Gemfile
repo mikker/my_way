@@ -1,13 +1,12 @@
-clear_sources
-source "http://gemcutter.org"
+source :gemcutter
 
-gem 'sinatra'
+gem 'sinatra', '1.0.a'
 gem 'haml'
 
-only :development do
+group :development do
   gem 'compass'
 end
 
-only :test do
-  gem 'rack-test', :require_as => false
+group :test do
+  gem 'rack-test', :require => 'rack/test'
 end

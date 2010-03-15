@@ -1,18 +1,14 @@
 ENV['RACK_ENV'] = 'test'
-require 'application'
-
+require 'init'
 require 'test/unit'
-require 'rack/test'
+Bundler.require(:default, :test)
 
-begin
-  require 'redgreen'
-rescue LoadError
-end
+# require 'rack/test'
 
 class Test::Unit::TestCase
   include Rack::Test::Methods
   def app
-    Sinatra::Application
+    MyWay.app
   end
 end
 
