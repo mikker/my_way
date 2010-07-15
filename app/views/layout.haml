@@ -1,12 +1,8 @@
-!!! Strict
-%html{ html_attrs('en-US') }
+!!! 5
+%html
   %head
-    / Meta
     %meta{"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}
-    / Styles
     %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/application.css"}
-    / Title
     %title SinatraApp
   %body
     = yield
-    
