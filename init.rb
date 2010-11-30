@@ -11,4 +11,4 @@ end
 # This actually requires the bundled gems
 Bundler.require(:default)
 
-require 'app/myway'
+require './app/myway'
