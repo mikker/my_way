@@ -1,14 +1,8 @@
-begin
-  # Try to require the preresolved locked set of gems.
-  require File.expand_path('.bundle/environment', __FILE__)
-rescue LoadError
-  # Fall back on doing an unlocked resolve at runtime.
-  require 'rubygems' # Can I avoid rubygems?
-  require "bundler"
-  Bundler.setup
-end
+require "rubygems"
+require "bundler"
 
 # This actually requires the bundled gems
-Bundler.require(:default)
+ENV['RACK_ENV'] ||= "development"
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
-require 'app/myway'
+require './app/myway'

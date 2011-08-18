@@ -1,9 +1,7 @@
 ENV['RACK_ENV'] = 'test'
-require 'init'
+require './init'
 require 'test/unit'
-Bundler.require(:default, :test)
-
-# require 'rack/test'
+Bundler.require(:test)
 
 class Test::Unit::TestCase
   include Rack::Test::Methods

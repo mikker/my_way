@@ -1,2 +1,2 @@
-require "init"
+require "./init"
 run MyWay.app
