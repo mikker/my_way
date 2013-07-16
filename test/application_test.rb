@@ -1,4 +1,4 @@
-require './test/helper'
+require './test/test_helper'
 
 class AppTest < Test::Unit::TestCase
 

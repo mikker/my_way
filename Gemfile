@@ -1,10 +1,10 @@
-source :gemcutter
+source "https://rubygems.org"
 
-gem 'sinatra', '~> 1.0'
-gem 'haml'
+gem 'rake'
+gem 'sinatra'
 
 group :development do
-  gem 'compass'
+  gem 'sass'
 end
 
 group :test do

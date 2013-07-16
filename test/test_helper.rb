@@ -6,11 +6,10 @@ Bundler.require(:test)
 class Test::Unit::TestCase
   include Rack::Test::Methods
   def app
-    MyWay.app
+    Application
   end
 end
 
-# Session helper
 def session
   last_request.env['rack.session']
 end

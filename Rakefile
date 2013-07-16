@@ -1,6 +1,6 @@
 desc "Compass watcher"
 task :compass do
-  system 'compass -w --sass-dir=app/stylesheets --css-dir=public/stylesheets --images-dir=public/images'
+  system 'sass --watch app/stylesheets/application.sass:public/stylesheets/application.css'
 end
 
 desc "Run Shotgun"
@@ -14,6 +14,6 @@ multitask :develop => [ 'compass', 'shotgun' ]
 # Test task
 require 'rake/testtask'
 Rake::TestTask.new do |t|
-  t.test_files = FileList['test/test_*.rb']
+  t.test_files = FileList['test/*_test.rb']
 end
 task :default => :test
