@@ -1,6 +1,6 @@
 require './test/test_helper'
 
-class AppTest < Test::Unit::TestCase
+class ApplicationTest < Test::Unit::TestCase
 
   def test_app_responds_correctly
     get '/'

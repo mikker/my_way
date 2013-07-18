@@ -1,2 +1,2 @@
-require "./init"
+require "./application"
 run Application

@@ -2,10 +2,7 @@ source "https://rubygems.org"
 
 gem 'rake'
 gem 'sinatra'
-
-group :development do
-  gem 'sass'
-end
+gem 'sinatra-asset-pipeline', require: 'sinatra/asset_pipeline'
 
 group :test do
   gem 'rack-test', :require => 'rack/test'
